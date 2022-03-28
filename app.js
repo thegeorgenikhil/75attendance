@@ -10,7 +10,7 @@ btn.addEventListener("click", () => {
     return (outputDiv.innerText = "Proper values please ¯\\_(ツ)_/¯");
   }
   if (present / total >= 0.75) {
-    return (outputDiv.innerText = "You have more that 75% attendance ~(˘▾˘~)");
+    return (outputDiv.innerText = "You have more than 75% attendance ~(˘▾˘~)");
   }
   const attendanceNeeded = reqAttendance(present, total);
   return (outputDiv.innerHTML = `You need to attend <strong>${attendanceNeeded}</strong> more days to have 75% attendance<br>Total Attendance Required(P/T): <strong>${
