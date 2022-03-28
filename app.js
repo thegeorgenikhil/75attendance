@@ -19,12 +19,5 @@ btn.addEventListener("click", () => {
 });
 
 const reqAttendance = (present, total) => {
-  const initialPresent = present;
-  let percent = present / total;
-  while (percent <= 0.75) {
-    present++;
-    total++;
-    percent = present / total;
-  }
-  return present - initialPresent - 1;
+  return 3 * total - 4 * present;
 };
