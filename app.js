@@ -6,7 +6,7 @@ const outputDiv = document.getElementById("output-div");
 btn.addEventListener("click", () => {
   let present = Number(presentInput.value);
   let total = Number(totalInput.value);
-  if (present <= 0 && total <= 0) {
+  if (present <= 0 || total <= 0 || present > total) {
     return (outputDiv.innerText = "Proper values please ¯\\_(ツ)_/¯");
   }
   if (present / total >= 0.75) {
