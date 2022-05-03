@@ -10,7 +10,10 @@ btn.addEventListener("click", () => {
     return (outputDiv.innerText = "Proper values please ¯\\_(ツ)_/¯");
   }
   if (present / total >= 0.75) {
-    return (outputDiv.innerText = "You have more than 75% attendance ~(˘▾˘~)");
+    const daysAvailableToBunk = daysToBunk(present, total);
+    return (outputDiv.innerHTML = `You can bunk for <strong>${daysAvailableToBunk}</strong> more days :)<br>Total Attendance will be then(P/T):<strong>${present}/${
+      total + daysAvailableToBunk
+    }</strong>`);
   }
   const attendanceNeeded = reqAttendance(present, total);
   return (outputDiv.innerHTML = `You need to attend <strong>${attendanceNeeded}</strong> more days to have 75% attendance<br>Total Attendance Required(P/T): <strong>${
@@ -20,4 +23,8 @@ btn.addEventListener("click", () => {
 
 const reqAttendance = (present, total) => {
   return 3 * total - 4 * present;
+};
+
+const daysToBunk = (present, total) => {
+  return Math.floor((4 * present - 3 * total) / 3);
 };
