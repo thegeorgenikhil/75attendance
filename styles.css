@@ -1,0 +1,48 @@
+input {
+  margin-bottom: 1rem;
+}
+
+strong {
+  font-size: 1.2rem;
+}
+
+.percentage-select {
+  margin-bottom: 1rem;
+}
+
+#github-link {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1rem;
+  font-size: 1.2rem;
+  background-image: repeating-linear-gradient(
+    45deg,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red,
+    violet
+  );
+  background-size: 800% 800%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 8s ease infinite;
+  text-decoration: underline;
+  border-bottom: 1px dashed black;
+}
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 25%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
