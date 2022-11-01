@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   font-family: "Inter", sans-serif;
 }
@@ -130,7 +131,6 @@ strong {
   flex-direction: column;
   gap: 4px;
   position: absolute;
-  z-index: -1;
   bottom: 0;
   left: 0;
   right: 0;
@@ -150,9 +150,9 @@ strong {
   }
 }
 
-/* media query for when the height is less than 80% of maximum height */
-@media screen and (max-height: 80vh) {
-  .footer {
+/* for fixing footer pushed up issue on mobile screen */
+@media screen and (max-width: 800px) {
+  .hide-footer {
     display: none;
   }
 }
