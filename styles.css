@@ -143,9 +143,16 @@ strong {
   color: #0070f3;
 }
 
-/* media query for less than 400px */
-@media screen and (max-width: 400px) {
+/* media query for less than 480px */
+@media screen and (max-width: 480px) {
   .navbar-sub-heading {
     font-size: 0.95rem;
+  }
+}
+
+/* media query for when the height is less than 80% of maximum height */
+@media screen and (max-height: 80vh) {
+  .footer {
+    display: none;
   }
 }
