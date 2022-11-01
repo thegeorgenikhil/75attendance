@@ -15,15 +15,20 @@ btn.addEventListener("click", () => {
 
   if (present / total >= percentage / 100) {
     const daysAvailableToBunk = daysToBunk(present, total, percentage);
-    return (outputDiv.innerHTML = `You can bunk for <strong>${daysAvailableToBunk}</strong> more days :)<br>Total Attendance will be then(P/T):<strong>${present}/${
-      total + daysAvailableToBunk
-    }</strong>`);
+    return (outputDiv.innerHTML = daysToBunkText(
+      daysAvailableToBunk,
+      present,
+      total
+    ));
   }
 
   const attendanceNeeded = reqAttendance(present, total, percentage);
-  return (outputDiv.innerHTML = `You need to attend <strong>${attendanceNeeded}</strong> more days to have ${percentage}% attendance<br>Total Attendance Required(P/T): <strong>${
-    attendanceNeeded + present
-  }/${attendanceNeeded + total}</strong>`);
+  return (outputDiv.innerHTML = daysToAttendClassText(
+    attendanceNeeded,
+    present,
+    total,
+    percentage
+  ));
 });
 
 const reqAttendance = (present, total, percentage) => {
@@ -33,3 +38,27 @@ const reqAttendance = (present, total, percentage) => {
 const daysToBunk = (present, total, percentage) => {
   return Math.floor((100 * present - percentage * total) / percentage);
 };
+
+const daysToBunkText = (daysAvailableToBunk, present, total) =>
+  `You can bunk for <strong>${daysAvailableToBunk}</strong> more days.<br>Current Attendance: <strong>${present}/${total}</strong> -> <strong>${(
+    (present / total) *
+    100
+  ).toFixed(2)}%</strong><br>Attendance Then: <strong>${present}/${
+    daysAvailableToBunk + total
+  }</strong> -> <strong>${(
+    (present / (daysAvailableToBunk + total)) *
+    100
+  ).toFixed(2)}%</strong>`;
+
+const daysToAttendClassText = (attendanceNeeded, present, total,percentage) =>
+  `You need to attend <strong>${attendanceNeeded}</strong> more classes to attain ${percentage}% attendance<br>Current Attendance: <strong>${present}/${total}</strong> ->  <strong>${(
+    (present / total) *
+    100
+  ).toFixed(2)}%</strong><br>Attendance Required: <strong>${
+    attendanceNeeded + present
+  }/${attendanceNeeded + total}</strong> -> <strong>${(
+    ((attendanceNeeded + present) / (attendanceNeeded + total)) *
+    100
+  ).toFixed(
+    2
+  )}%</strong>`;
