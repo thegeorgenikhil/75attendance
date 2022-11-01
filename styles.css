@@ -30,7 +30,7 @@ strong {
   margin: 1rem 0 2rem 0;
 }
 
-.m-w-60-auto {
+.container-centered {
   max-width: fit-content;
   margin: auto;
 }
@@ -129,7 +129,7 @@ strong {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
