@@ -4,6 +4,12 @@ const totalInput = document.getElementById("total-input");
 const btn = document.getElementById("btn");
 const outputDiv = document.getElementById("output-div");
 const footer = document.getElementById("footer");
+const banner = document.getElementById("banner");
+const closeBtn = document.getElementById("close-btn");
+
+closeBtn.addEventListener("click", () => {
+  banner.style.display = "none";
+});
 
 btn.addEventListener("click", () => {
   let present = Number(presentInput.value);

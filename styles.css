@@ -15,6 +15,30 @@ strong {
   font-family: monospace;
 }
 
+.banner {
+  background-color: #2cb67d;
+  color: #fff;
+  padding: 8px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.banner a {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.close-banner-btn{
+  position: absolute;
+  right: 0;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
 .navbar {
   padding: 2rem 1rem 0 1rem;
 }
