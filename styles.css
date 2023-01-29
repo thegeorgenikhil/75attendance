@@ -32,7 +32,7 @@ strong {
   font-weight: 500;
 }
 
-.close-banner-btn{
+.close-banner-btn {
   position: absolute;
   right: 0;
   margin-right: 1rem;
@@ -172,6 +172,10 @@ strong {
 @media screen and (max-width: 480px) {
   .navbar-sub-heading {
     font-size: 0.95rem;
+  }
+
+  .banner {
+   font-size: 0.9rem;
   }
 }
 
