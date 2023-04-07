@@ -12,9 +12,9 @@ closeBtn.addEventListener("click", () => {
 });
 
 btn.addEventListener("click", () => {
-  let present = Number(presentInput.value);
-  let total = Number(totalInput.value);
-  let percentage = Number(percentageSelect.value);
+  let present = parseInt(presentInput.value);
+  let total = parseInt(totalInput.value);
+  let percentage = parseInt(percentageSelect.value);
 
   if (present <= 0 || total <= 0 || present > total) {
     return (outputDiv.innerText = "Proper values please ¯\\_(ツ)_/¯");
@@ -39,7 +39,7 @@ btn.addEventListener("click", () => {
 });
 
 const reqAttendance = (present, total, percentage) => {
-  return Math.floor((percentage * total - 100 * present) / (100 - percentage));
+  return Math.ceil((percentage * total - 100 * present) / (100 - percentage));
 };
 
 const daysToBunk = (present, total, percentage) => {
@@ -69,7 +69,7 @@ const daysToAttendClassText = (attendanceNeeded, present, total, percentage) =>
   ).toFixed(2)}%</strong>`;
 
 // Issue: Footer gets pushed up when the keyboard on mobile screen come up due to the absolute positioning of the footer
-// Solution (Hacky Fix): Hide the footer when any of the input is focued
+// Solution (Hacky Fix): Hide the footer when any of the input is focused
 
 presentInput.addEventListener("focus", () => {
   footer.classList.add("hide-footer");
