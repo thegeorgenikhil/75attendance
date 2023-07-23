@@ -16,7 +16,7 @@ strong {
 }
 
 .banner {
-  background-color: #2cb67d;
+  background-color: #6e46e7;
   color: #fff;
   padding: 8px;
   text-align: center;
@@ -175,7 +175,11 @@ strong {
   }
 
   .banner {
-   font-size: 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .banner p {
+    max-width: 30ch;
   }
 }
 
