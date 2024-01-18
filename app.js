@@ -11,7 +11,7 @@ btn.addEventListener("click", () => {
   let total = parseInt(totalInput.value);
   let percentage = parseInt(percentageSelect.value);
 
-  if (present <= 0 || total <= 0 || present > total) {
+  if (present < 0 || total <= 0 || present > total) {
     return (outputDiv.innerText = "Proper values please ¯\\_(ツ)_/¯");
   }
 
