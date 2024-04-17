@@ -42,7 +42,7 @@ const daysToBunk = (present, total, percentage) => {
 };
 
 const daysToBunkText = (daysAvailableToBunk, present, total) =>
-  `You can bunk for <strong>${daysAvailableToBunk}</strong> more days.<br>Current Attendance: <strong>${present}/${total}</strong> -> <strong>${(
+  `You can bunk for <strong>${daysAvailableToBunk}</strong> more lectures.<br>Current Attendance: <strong>${present}/${total}</strong> -> <strong>${(
     (present / total) *
     100
   ).toFixed(2)}%</strong><br>Attendance Then: <strong>${present}/${
