@@ -16,16 +16,16 @@ btn.addEventListener("click", () => {
   }
 
   if (present / total >= percentage / 100) {
-    const daysAvailableToBunk = daysToBunk(present, total, percentage);
-    return (outputDiv.innerHTML = daysToBunkText(
-      daysAvailableToBunk,
+    const lecturesAvailableToBunk = lecturesToBunk(present, total, percentage);
+    return (outputDiv.innerHTML = lecturesToBunkText(
+      lecturesAvailableToBunk,
       present,
       total
     ));
   }
 
   const attendanceNeeded = reqAttendance(present, total, percentage);
-  return (outputDiv.innerHTML = daysToAttendClassText(
+  return (outputDiv.innerHTML = lecturesToAttendClassText(
     attendanceNeeded,
     present,
     total,
@@ -37,23 +37,24 @@ const reqAttendance = (present, total, percentage) => {
   return Math.ceil((percentage * total - 100 * present) / (100 - percentage));
 };
 
-const daysToBunk = (present, total, percentage) => {
+// Updated function name and comments
+const lecturesToBunk = (present, total, percentage) => {
   return Math.floor((100 * present - percentage * total) / percentage);
 };
 
-const daysToBunkText = (daysAvailableToBunk, present, total) =>
-  `You can bunk for <strong>${daysAvailableToBunk}</strong> more days.<br>Current Attendance: <strong>${present}/${total}</strong> -> <strong>${(
+const lecturesToBunkText = (lecturesAvailableToBunk, present, total) =>
+  `You can bunk for <strong>${lecturesAvailableToBunk}</strong> more lectures.<br>Current Attendance: <strong>${present}/${total}</strong> -> <strong>${(
     (present / total) *
     100
   ).toFixed(2)}%</strong><br>Attendance Then: <strong>${present}/${
-    daysAvailableToBunk + total
+    lecturesAvailableToBunk + total
   }</strong> -> <strong>${(
-    (present / (daysAvailableToBunk + total)) *
+    (present / (lecturesAvailableToBunk + total)) *
     100
   ).toFixed(2)}%</strong>`;
 
-const daysToAttendClassText = (attendanceNeeded, present, total, percentage) =>
-  `You need to attend <strong>${attendanceNeeded}</strong> more classes to attain ${percentage}% attendance<br>Current Attendance: <strong>${present}/${total}</strong> ->  <strong>${(
+const lecturesToAttendClassText = (attendanceNeeded, present, total, percentage) =>
+  `You need to attend <strong>${attendanceNeeded}</strong> more lectures to attain ${percentage}% attendance<br>Current Attendance: <strong>${present}/${total}</strong> ->  <strong>${(
     (present / total) *
     100
   ).toFixed(2)}%</strong><br>Attendance Required: <strong>${
@@ -63,7 +64,7 @@ const daysToAttendClassText = (attendanceNeeded, present, total, percentage) =>
     100
   ).toFixed(2)}%</strong>`;
 
-// Issue: Footer gets pushed up when the keyboard on mobile screen come up due to the absolute positioning of the footer
+// Issue: Footer gets pushed up when the keyboard on mobile screen comes up due to the absolute positioning of the footer
 // Solution (Hacky Fix): Hide the footer when any of the input is focused
 
 presentInput.addEventListener("focus", () => {
