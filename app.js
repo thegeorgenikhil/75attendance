@@ -9,6 +9,10 @@ btn.addEventListener("click", () => {
   let present = parseInt(presentInput.value);
   let total = parseInt(totalInput.value);
   let percentage = parseInt(percentageSelect.value);
+  
+  if (isNaN(present) || isNaN(total) || isNaN(percentage)) {
+    return (outputDiv.innerText = "Proper values please ¯\\_(ツ)_/¯");
+  }
 
   if (present < 0 || total <= 0 || present > total) {
     return (outputDiv.innerText = "Proper values please ¯\\_(ツ)_/¯");
