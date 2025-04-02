@@ -3,7 +3,6 @@ const presentInput = document.getElementById("present-input");
 const totalInput = document.getElementById("total-input");
 const btn = document.getElementById("btn");
 const outputDiv = document.getElementById("output-div");
-const footer = document.getElementById("footer");
 const banner = document.getElementById("banner");
 
 btn.addEventListener("click", () => {
@@ -62,22 +61,3 @@ const daysToAttendClassText = (attendanceNeeded, present, total, percentage) =>
     ((attendanceNeeded + present) / (attendanceNeeded + total)) *
     100
   ).toFixed(2)}%</strong>`;
-
-// Issue: Footer gets pushed up when the keyboard on mobile screen come up due to the absolute positioning of the footer
-// Solution (Hacky Fix): Hide the footer when any of the input is focused
-
-presentInput.addEventListener("focus", () => {
-  footer.classList.add("hide-footer");
-});
-
-presentInput.addEventListener("focusout", () => {
-  footer.classList.remove("hide-footer");
-});
-
-totalInput.addEventListener("focus", () => {
-  footer.classList.add("hide-footer");
-});
-
-totalInput.addEventListener("focusout", () => {
-  footer.classList.remove("hide-footer");
-});

@@ -6,13 +6,13 @@
 
 html,
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Geist", sans-serif;
 }
 
 strong {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: black;
-  font-family: monospace;
+  font-family: "Geist", sans-serif;
 }
 
 .banner {
@@ -150,24 +150,6 @@ strong {
   margin: 1rem;
 }
 
-.footer {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #666666;
-}
-
-.footer-link {
-  color: #0070f3;
-}
-
 /* media query for less than 480px */
 @media screen and (max-width: 480px) {
   .navbar-sub-heading {
@@ -183,9 +165,110 @@ strong {
   }
 }
 
-/* for fixing footer pushed up issue on mobile screen */
-@media screen and (max-width: 800px) {
-  .hide-footer {
-    display: none;
+/* Ad Component Styles */
+.ad-container {
+  position: fixed;
+  overflow: hidden;
+  z-index: 50;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  border: 1px solid #eaeaea;
+  padding: 1rem;
+  background-color: #fff;
+  height: 88px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.ad-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ad-container.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.ad-icon {
+  position: absolute;
+  left: 4px;
+  top: 1rem;
+  object-fit: contain;
+  width: 50px;
+  height: 50px;
+}
+
+.ad-content {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 8px
+}
+
+.ad-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding-left: 40px;
+}
+
+.ad-title {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.ad-description {
+  font-size: 0.75rem;
+  color: #878787;
+}
+
+.ad-close-btn {
+  position: absolute;
+  right: 0.375rem;
+  top: 0.375rem;
+  color: #878787;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.ad-close-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Media query for desktop */
+@media screen and (min-width: 768px) {
+  .ad-container {
+    left: auto;
+    max-width: 365px;
   }
+}
+
+.heading-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.github-link {
+  color: #666;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.github-link:hover {
+  color: #000;
+}
+
+.github-icon {
+  width: 1.5rem;
+  height: 1.5rem;
 }
