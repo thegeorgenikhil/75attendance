@@ -1,0 +1,80 @@
+/* Theme toggle button style */
+
+#theme-toggle {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: auto;
+    color: inherit;
+    padding: 0.25rem 0.5rem;
+    transition: opacity 0.2 ease;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+#theme-toggle:hover {
+    opacity: 0.7;
+}
+
+/* Dark theme style */
+/* NOTE: I've used "body.dark" for better readability since "dark" class is added inside the body tag */
+/* But ofcourse it works without the "body.dark" so don't worry (; */
+
+/* And all the following code does is changing style to the dark class for each class, that's it */
+body.dark {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.dark .navbar-sub-heading,
+body.dark .output-text,
+body.dark strong {
+    color: #cccc;
+}
+
+body.dark .percentage-select {
+    color: #ccc;
+}
+
+body.dark .percentage-select option {
+    background-color: #ccc;
+    color: #121212;
+}
+
+body.dark .input-container label {
+    background-color: #1e1e1e;
+    color: #ccc;
+    border-color: #333;
+}
+
+body.dark .input-container input {
+    background-color: #1e1e1e;
+    color: #eee;
+    border: #333;
+}
+
+body.dark .calculate-btn {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark .divider {
+    background-color: #333;
+}
+
+/* Dark theme style for ads */
+
+body.dark .ad-container {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    border-color: #333;
+}
+  
+body.dark .ad-description {
+    color: #aaa;
+}
+
+body.dark .ad-close-btn {
+    color: #999;
+}
+  
