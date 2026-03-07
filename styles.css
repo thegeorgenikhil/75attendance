@@ -7,16 +7,18 @@
 html,
 body {
   font-family: "Geist", sans-serif;
+  background: linear-gradient(135deg, #eef2ff 0%, #faf5ff 50%, #fff1f2 100%);
+  min-height: 100vh;
 }
 
 strong {
   font-size: 1.1rem;
-  color: black;
+  color: #312e81;
   font-family: "Geist", sans-serif;
 }
 
 .banner {
-  background-color: #6e46e7;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
   color: #fff;
   padding: 8px;
   text-align: center;
@@ -44,15 +46,16 @@ strong {
 }
 
 .navbar-sub-heading {
-  color: #666666;
+  color: #6b7280;
   margin-top: 0.6rem;
 }
 
 .divider {
   width: 100%;
-  height: 1px;
-  background-color: #ececec;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899, #f59e0b);
   margin: 1rem 0 2rem 0;
+  border-radius: 1px;
 }
 
 .container-centered {
@@ -66,19 +69,20 @@ strong {
 }
 
 .input-container label {
-  color: #666;
-  background-color: #fafafa;
-  border: 1px solid #eaeaea;
+  color: #4f46e5;
+  background-color: #eef2ff;
+  border: 1px solid #c7d2fe;
   height: 42px;
   display: flex;
   align-items: center;
   padding: 0 1rem;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
+  font-weight: 500;
 }
 
 .input-container input {
-  border: 1px solid #eaeaea;
+  border: 1px solid #c7d2fe;
   height: 42px;
   width: 100%;
   padding: 0 1rem;
@@ -87,10 +91,12 @@ strong {
   border-bottom-right-radius: 3px;
   transition: all 0.3s ease;
   font-size: 1rem;
+  background-color: #fff;
 }
 
 .input-container input:focus {
-  border: 1px solid #888;
+  border: 1px solid #818cf8;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
 .user-input-container {
@@ -113,9 +119,9 @@ strong {
 .percentage-select {
   height: 42px;
   font-size: 1rem;
-  border: 1px solid #eaeaea;
+  border: 1px solid #c7d2fe;
   transition: all 0.3s ease;
-  background-color: transparent;
+  background-color: #fff;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   padding: 0 0.5rem;
@@ -123,31 +129,53 @@ strong {
 
 .percentage-select:focus {
   outline: none;
+  border-color: #818cf8;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
 .calculate-btn {
   height: 42px;
   width: 100%;
   font-family: inherit;
-  background-color: #000;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
   color: #fff;
-  border-radius: 3px;
+  border-radius: 6px;
   outline: none;
   border: none;
   font-size: 1rem;
+  font-weight: 500;
   transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
 }
 
 .calculate-btn:hover {
   cursor: pointer;
-  opacity: 0.89;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  transform: translateY(-1px);
+}
+
+.calculate-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.3);
 }
 
 .output-text {
-  color: #666666;
+  color: #4b5563;
   text-align: center;
   font-size: 1rem;
+  margin: 1.5rem 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(168, 85, 247, 0.05));
+  border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.output-text:empty {
+  padding: 0;
   margin: 1rem;
+  background: none;
+  border: none;
 }
 
 /* media query for less than 480px */
@@ -173,13 +201,15 @@ strong {
   bottom: 1rem;
   left: 1rem;
   right: 1rem;
-  border: 1px solid #eaeaea;
+  border: 1px solid #e0e7ff;
   padding: 1rem;
   background-color: #fff;
   height: 100px;
   opacity: 0;
   transform: translateY(100%);
   transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
 }
 
 .ad-container.show {
@@ -258,15 +288,22 @@ strong {
   gap: 0.75rem;
 }
 
+.heading-container h1 {
+  background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .github-link {
-  color: #666;
+  color: #8b5cf6;
   transition: color 0.2s ease;
   display: flex;
   align-items: center;
 }
 
 .github-link:hover {
-  color: #000;
+  color: #6366f1;
 }
 
 .github-icon {
