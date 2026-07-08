@@ -3,7 +3,6 @@ const presentInput = document.getElementById("present-input");
 const totalInput = document.getElementById("total-input");
 const btn = document.getElementById("btn");
 const outputDiv = document.getElementById("output-div");
-const banner = document.getElementById("banner");
 
 btn.addEventListener("click", () => {
   let present = parseInt(presentInput.value);
