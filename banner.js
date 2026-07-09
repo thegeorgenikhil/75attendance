@@ -294,14 +294,14 @@
   function init() {
     injectStyles();
 
-    const eligible = forceShow || isSecondDayOrLater();
-    if (!eligible) return;
+    // Record first visit / determine 2nd-day eligibility (still gates the interstitial).
+    const secondDayOrLater = isSecondDayOrLater();
 
-    // Persistent top strip: shown on load for eligible users.
+    // Persistent top strip: shown on EVERY load, regardless of user age.
     renderStrip();
 
-    // Interstitial: armed for Calculate click if not in cooldown.
-    const interstitialArmed = forceShow || !interstitialInCooldown();
+    // Interstitial: gated behind the 2nd-day rule + cooldown (or the force-show key).
+    const interstitialArmed = forceShow || (secondDayOrLater && !interstitialInCooldown());
     if (!interstitialArmed) return;
 
     if (forceShow) {
