@@ -5,10 +5,12 @@ const btn = document.getElementById("btn");
 const outputDiv = document.getElementById("output-div");
 
 btn.addEventListener("click", () => {
+  if (typeof gtag !== "undefined") gtag("event", "calculate_attendance");
+
   let present = parseInt(presentInput.value);
   let total = parseInt(totalInput.value);
   let percentage = parseInt(percentageSelect.value);
-  
+
   if (isNaN(present) || isNaN(total) || isNaN(percentage)) {
     return (outputDiv.innerText = "Proper values please ¯\\_(ツ)_/¯");
   }
