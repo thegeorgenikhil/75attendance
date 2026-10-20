@@ -1,3 +1,11 @@
 docs/*
 
 CONTEXT.md
+
+# Google OAuth client secret (used for gcloud ADC login)
+secret.json
+client_secret*.json
+
+# Local Google Analytics MCP setup
+.mcp.json
+google-analytics-mcp/

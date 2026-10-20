@@ -4,6 +4,9 @@ const totalInput = document.getElementById("total-input");
 const btn = document.getElementById("btn");
 const outputDiv = document.getElementById("output-div");
 
+// banner.js listens for these to show / hide the TUF+ card under the result
+const notify = (name, detail) => document.dispatchEvent(new CustomEvent(name, { detail }));
+
 btn.addEventListener("click", () => {
   if (typeof gtag !== "undefined") gtag("event", "calculate_attendance");
 
@@ -12,15 +15,18 @@ btn.addEventListener("click", () => {
   let percentage = parseInt(percentageSelect.value);
 
   if (isNaN(present) || isNaN(total) || isNaN(percentage)) {
+    notify("attendance:invalid");
     return (outputDiv.innerText = "Proper values please ¯\\_(ツ)_/¯");
   }
 
   if (present < 0 || total <= 0 || present > total) {
+    notify("attendance:invalid");
     return (outputDiv.innerText = "Proper values please ¯\\_(ツ)_/¯");
   }
 
   if (present / total >= percentage / 100) {
     const daysAvailableToBunk = daysToBunk(present, total, percentage);
+    notify("attendance:calculated", { canBunk: true, days: daysAvailableToBunk });
     return (outputDiv.innerHTML = daysToBunkText(
       daysAvailableToBunk,
       present,
@@ -29,6 +35,7 @@ btn.addEventListener("click", () => {
   }
 
   const attendanceNeeded = reqAttendance(present, total, percentage);
+  notify("attendance:calculated", { canBunk: false, days: attendanceNeeded });
   return (outputDiv.innerHTML = daysToAttendClassText(
     attendanceNeeded,
     present,
