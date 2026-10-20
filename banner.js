@@ -2,12 +2,10 @@
   "use strict";
 
   /* ----------------------------- CONFIG ---------------------------------- */
-  // Prices from the TUF+ checkout catalog (Oct 2026): OFFER40 coupon, PLUS BASIC 12 months is the cheapest plan.
   const BANNER_CONFIG = {
     affiliateLink: "https://takeuforward.org/plus?affiliate=attendance75",
     saleOn: true, // flip to false when the sale ends
     discountBadge: "40% OFF", // edit when the discount changes
-    fromPrice: "₹4,399", // cheapest plan price, shown on the result card
     stripClickCooldownDays: 30, // hide the strip for this long after someone clicks it
   };
 
@@ -205,7 +203,7 @@
       });
     }
 
-    const cta = c.saleOn ? "Get TUF+ from " + c.fromPrice : "Explore TUF+";
+    const cta = c.saleOn ? "Get TUF+ at " + c.discountBadge.toLowerCase() : "Explore TUF+";
     resultEl.innerHTML =
       '<a class="tuf-result-card" href="' + c.affiliateLink + '" target="_blank" rel="noopener">' +
       '<span class="tuf-result-head">' + plusMark + '<span class="tuf-result-brand">TUF+</span>' +
