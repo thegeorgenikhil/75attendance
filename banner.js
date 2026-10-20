@@ -3,7 +3,7 @@
 
   /* ----------------------------- CONFIG ---------------------------------- */
   const BANNER_CONFIG = {
-    affiliateLink: "https://takeuforward.org/plus?affiliate=attendance75",
+    affiliateLink: "https://takeuforward.org/pricing?affiliate=attendance75#plans",
     saleOn: true, // flip to false when the sale ends
     discountBadge: "40% OFF", // edit when the discount changes
     stripClickCooldownDays: 30, // hide the strip for this long after someone clicks it
